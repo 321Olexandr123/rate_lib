@@ -33,7 +33,7 @@
   "description": "",
   "autoload": {
     "psr-4": {
-      "Stock\\": ""
+      "Rate\\": ""
     }
   },
   "extra": {
