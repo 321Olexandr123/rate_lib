@@ -1,5 +1,7 @@
 <?php
 
+namespace Rate\Rate;
+
 use Symfony\Component\HttpClient\NativeHttpClient;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
