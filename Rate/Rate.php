@@ -25,7 +25,7 @@ class Rate
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'http://cm.crpt.trading/rate/generate-currency', [
+        $response = $client->request('POST', 'http://wu.crpt.trading/rate/generate-currency', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
