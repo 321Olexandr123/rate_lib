@@ -37,6 +37,7 @@ class Rate
     /**
      *
      * @param string $type
+     * @param array $data
      * @param string $bearer
      * @return array
      * @throws ClientExceptionInterface
@@ -45,7 +46,7 @@ class Rate
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public static function getCryptocurrencyHistory(string $type, string $bearer)
+    public static function getCryptocurrencyHistory(string $type, array $data, string $bearer)
     {
         $client = new NativeHttpClient();
 
@@ -55,7 +56,8 @@ class Rate
                 'Authorization' => 'Bearer ' . $bearer
             ],
             'json' => [
-                'type' => $type
+                'type' => $type,
+                'data' => $data
             ]
         ]);
         return $response->toArray();
