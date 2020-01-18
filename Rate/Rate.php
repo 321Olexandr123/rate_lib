@@ -33,4 +33,31 @@ class Rate
         ]);
         return $response->toArray();
     }
+
+    /**
+     *
+     * @param string $type
+     * @param string $bearer
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws DecodingExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
+     */
+    public static function getCryptocurrencyHistory(string $type, string $bearer)
+    {
+        $client = new NativeHttpClient();
+
+        $response = $client->request('POST', 'http://wu.crpt.trading/rate/cryptocurrency-history', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $bearer
+            ],
+            'json' => [
+                'type' => $type
+            ]
+        ]);
+        return $response->toArray();
+    }
 }
