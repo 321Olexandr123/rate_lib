@@ -50,7 +50,7 @@ class Rate
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'http://wu.crpt.trading/rate/cryptocurrency-history', [
+        $response = $client->request('POST', 'https://rate.crpt.trading/rate/cryptocurrency-history', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
